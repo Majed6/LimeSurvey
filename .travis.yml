@@ -10,6 +10,7 @@ php:
     - 7.1
     - 7.2
     - 7.3
+    - 7.4
 services:
     - mysql
 
@@ -25,7 +26,7 @@ before_script:
     #- sudo apt-get upgrade
 
     # disable xdebug to speed up tests
-    - phpenv config-rm xdebug.ini
+    - phpenv config-rm xdebug.ini || echo "xdebug not available"
 
     # Install LimeSurvey.
     - mysql --version
