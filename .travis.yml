@@ -32,7 +32,7 @@ before_script:
     - sudo service mysql status
     - touch enabletests
     # NB: PHPUnit 6.5.* is installed with composer.
-    - if [[ ${TRAVIS_PHP_VERSION:0:3} == "7.4" ]]; then sudo apt-get install php7.4-zip; fi
+    - if [[ ${TRAVIS_PHP_VERSION:0:3} == "7.4" ]]; then sudo apt-get update && sudo apt-get install php7.4-zip; fi
     - composer install
     - ./third_party/bin/phpunit --version
     - chmod -R 777 tmp
